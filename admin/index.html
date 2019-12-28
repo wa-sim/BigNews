@@ -25,7 +25,7 @@
       <!-- 左侧导航栏 -->
       <div class="menu">
         <div class="level01 active">
-          <a href="#" target="main_frame"
+          <a href="main_count.html" target="main_frame"
             ><i class="iconfont icon-yidiandiantubiao04"></i
             ><span>首页</span></a
           >
@@ -58,12 +58,12 @@
         </ul>
 
         <div class="level01">
-          <a href="#" target="main_frame"
+          <a href="comment_list.html" target="main_frame"
             ><i class="iconfont icon-comment"></i><span>评论管理</span></a
           >
         </div>
         <div class="level01" id="user">
-          <a href="#" target="main_frame"
+          <a href="./user.html" target="main_frame"
             ><i class="iconfont icon-user"></i><span>个人中心</span></a
           >
         </div>
@@ -79,7 +79,14 @@
         </div>
       </div>
       <!-- 右侧主体内容 -->
-      <div class="main" id="main_body"></div>
+      <div class="main" id="main_body">
+        <iframe
+          name="main_frame"
+          style="width: 100%; height: 500px;"
+          src="main_count.html"
+          frameborder="0"
+        ></iframe>
+      </div>
     </div>
     <script src="../admin/js/http.js"></script>
     <script>
@@ -87,7 +94,7 @@
         //  通过 ajax 向服务器请求获取用户信息
         $.ajax({
           //  获取用户信息的接口
-          url: "http://localhost:8080/api/v1/admin/user/info",
+          url: urls.userInfo,
 
           success: function(response) {
             console.log(response);
