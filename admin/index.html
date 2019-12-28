@@ -84,21 +84,11 @@
     <script src="../admin/js/http.js"></script>
     <script>
       $(function() {
-        /*   //  获取有没有 token 令牌
-        const token = localStorage.getItem("token");
-        //  没有令牌 先跳转登录页
-        if (!token) {
-          location.href = "./login.html";
-        } */
         //  通过 ajax 向服务器请求获取用户信息
         $.ajax({
           //  获取用户信息的接口
           url: "http://localhost:8080/api/v1/admin/user/info",
-         /*  //  设置请求头
-          headers: {
-            //  token 令牌告诉服务器当前是哪个用户要访问数据
-            Authorization: token
-          }, */
+
           success: function(response) {
             console.log(response);
             const nickname = response.data.nickname;
